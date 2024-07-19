@@ -1,3 +1,61 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react-hooks/recommended",
+    "next/core-web-vitals",
+    "next"
+  ],
+  "rules": {
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    // 👉eslint: https://eslint.org/docs/latest/rules/
+    "array-bracket-spacing": 1,
+    "arrow-spacing": 1,
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "comma-dangle": 1,
+    "comma-spacing": 1,
+    "indent": [
+      "warn",
+      2
+    ],
+    "keyword-spacing": 1,
+    "linebreak-style": 0,
+    "no-console": 1,
+    "no-unused-vars": 1,
+    "no-lonely-if": 1,
+    "no-trailing-spaces": 1,
+    "no-multi-spaces": 1,
+    "no-undef": "error",
+    "consistent-return": 0,
+    "no-nested-ternary": 1,
+    "no-multiple-empty-lines": 1,
+    "no-unexpected-multiline": "warn",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "quote-props": [
+      "error",
+      "consistent-as-needed"
+    ],
+    "space-before-blocks": [
+      "error",
+      "always"
+    ],
+    "semi": "warn",
+    "prefer-const": "error",
+    "object-curly-spacing": [
+      1,
+      "always"
+    ]
+  }
 }
