@@ -44,6 +44,11 @@ const config: Config = {
       }
     }
   },
-  plugins: []
+  plugins: [],
+  // 👇 Resolve conflic between Antd and TaildwindCSS
+  corePlugins: {
+    preflight: false
+  },
+  important: '#root'
 };
 export default config;
