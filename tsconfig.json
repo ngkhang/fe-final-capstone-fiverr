@@ -25,7 +25,10 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "typeRoots": [
+      "env.d.ts"
+    ]
   },
   "include": [
     "next-env.d.ts",
