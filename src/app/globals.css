@@ -13,19 +13,22 @@
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
   border-color: theme('borderColor.DEFAULT', currentColor); /* 2 */
-  text-decoration: none;
 }
 
 ::before,
 ::after {
   --tw-content: '';
 }
+
+a {
+  text-decoration: none;
+}
 @layer base {
   * {
     @apply font-base;
   }
   body {
-    @apply bg-white text-gray-10 min-h-screen flex flex-col;
+    @apply bg-white text-gray-10 min-h-screen;
   }
 }
 
@@ -39,6 +42,12 @@
 }
 
 @layer utilities {
+  .center {
+    @apply flex justify-center items-center;
+  }
+  .flex-between {
+    @apply flex justify-between;
+  }
   .btnSearch {
     .ant-input-group-addon {
       @apply bg-green-7 hover:bg-green-9;
