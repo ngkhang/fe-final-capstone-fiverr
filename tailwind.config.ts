@@ -1,67 +1,80 @@
 import type { Config } from 'tailwindcss';
 
-export default {
+const config = {
+  darkMode: ['class'],
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}'
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}'
   ],
+  prefix: '',
   theme: {
-    extend: {
+    container: {
+      center: true,
+      padding: '2rem',
       screens: {
-        'mobile': '414px',
-        'tablet': '600px',
-        'laptop': '900px',
-        'laptop-l': '1160px'
+        '2xl': '1400px',
       },
-      maxWidth: {
-        main: '1400px'
-      },
+    },
+    extend: {
       colors: {
-        blue: {
-          9: '#3453A8',
-          7: '#446EE7'
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
         },
-        orange: {
-          9: '#CA6923',
-          7: '#FC832B'
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
         },
-        red: {
-          9: '#C43333',
-          7: '#F74040'
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
         },
-        pink: {
-          7: '#FF62AD'
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
         },
-        green: {
-          9: '#188652',
-          8: '#19A463',
-          7: '#1DBF73'
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
         },
-        gray: {
-          12:'#222325',
-          11:'#404145',
-          10:'#62646A',
-          9: '#74767E',
-          7: '#B5B6BA',
-          3: '#EFEFF0',
-          2: '#F5F5F5'
-        }
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
       },
-      fontFamily: {
-        base : ['Montserrat', 'Helvetica', 'Arial', 'sans-serif']
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
-      backgroundImage: {
-        '404Page': "linear-gradient(90deg,rgba(0,0,0,.81) 17.97%,rgba(0,0,0,.31) 57.6%,transparent 77.6%), url('/assets/images/404page.png')"
-      }
-    }
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
   },
-  plugins: [
-    // require('./src/lib/tailwind.plugins.ts')
-  ],
-  // 👇 Resolve conflic between Antd and TaildwindCSS
-  corePlugins: {
-    preflight: false
-  },
-  important: '#root'
+  plugins: [require('tailwindcss-animate')],
 } satisfies Config;
+
+export default config;

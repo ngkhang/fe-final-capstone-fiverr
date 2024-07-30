@@ -22,8 +22,8 @@ const Configuration: UserConfig = {
         'revert',
         'vercel'
       ]
-    ]
-  }
+    ],
+  },
 };
 
 export default Configuration;
