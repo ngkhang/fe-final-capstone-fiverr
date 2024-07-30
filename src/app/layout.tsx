@@ -1,12 +1,7 @@
 import React from 'react';
-import { Montserrat } from 'next/font/google';
-import { AntdRegistry } from '@ant-design/nextjs-registry';
 import './globals.css';
 import { ComponentType } from '@/models/common';
-
-const montserrat = Montserrat({
-  subsets: ['latin', 'vietnamese']
-});
+import { macan } from '@/styles/fonts';
 
 export default function RootLayout({ children } : ComponentType) {
   return (
@@ -15,10 +10,8 @@ export default function RootLayout({ children } : ComponentType) {
       <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png"></link>
       <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png"></link>
 
-      <body id="root" className={montserrat.className} suppressHydrationWarning={true}>
-        <AntdRegistry>
-          {children}
-        </AntdRegistry>
+      <body id="root" className={macan.className} suppressHydrationWarning={true}>
+        {children}
       </body>
     </html>
   );

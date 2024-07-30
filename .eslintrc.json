@@ -21,7 +21,8 @@
     "comma-dangle": [
       1,
       {
-        "objects": "always-multiline"
+        "objects": "always-multiline",
+        "exports": "always-multiline"
       }
     ],
     "comma-spacing": 1,
