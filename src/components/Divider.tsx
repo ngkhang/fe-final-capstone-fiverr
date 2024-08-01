@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { HTMLProps } from 'react';
 
 interface Props {
-  className?: string;
+  className?: HTMLProps<HTMLElement>['className'];
 }
 
 const Divider = ({ className }: Props) => (

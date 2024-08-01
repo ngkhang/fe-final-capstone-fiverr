@@ -6,7 +6,8 @@ import {
   IoLogoFacebook,
   IoLogoPinterest,
   IoAccessibility,
-  IoMenu
+  IoMenu,
+  IoSearch
 } from 'react-icons/io5';
 
 import { FaXTwitter } from 'react-icons/fa6';
@@ -26,7 +27,8 @@ const Icons: Icon = {
   Accessibility: <IoAccessibility />,
   GlobalLine: <RiGlobalLine />,
   Money: <TfiMoney />,
-  IoMenu : <IoMenu />,
+  Menu : <IoMenu />,
+  Search : <IoSearch />,
 };
 
 export default Icons;

@@ -1,5 +1,7 @@
-import FooterAntd from './Footer';
+import Header from './Header/Header';
+import Footer from './Footer';
 
 export {
-  FooterAntd as Footer
+  Header,
+  Footer,
 };

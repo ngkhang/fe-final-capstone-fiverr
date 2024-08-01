@@ -1,6 +1,160 @@
 /**
-* Static content of Footer
-*/
+ * Static content of Header
+ */
+export const HeaderContent = {
+  main: {
+    logo: {
+      src: '/assets/icons/fiverr-black.svg',
+      alt: 'fiverr-logo-header',
+    },
+    search: {
+      'long-placeholder': 'What service are you looking for today?',
+      'short-placeholder': 'Find services',
+    },
+    nav: [
+      {
+        key: 1,
+        label: 'Fiverr Pro',
+        href: '/',
+        children: [
+          {
+            key: 1,
+            image: '/assets/images/header-nav (1).svg',
+            label: "I'm looking to hire",
+            caption:
+              'My team needs vetted freelance talent and a premium business solution.',
+          },
+          {
+            key: 2,
+            image: '/assets/images/header-nav (2).svg',
+            label: 'I want to offer Pro services',
+            caption:
+              "I'd like to work on business projects as a Pro freelancer or agency.",
+          }
+        ],
+      },
+      {
+        key: '2',
+        label: 'Explore',
+        href: '/',
+        children: [
+          {
+            key: 1,
+            image: '',
+            label: 'Discover',
+            caption: 'Inspiring projects made on Fiverr',
+          },
+          {
+            key: 2,
+            image: '',
+            label: 'Community',
+            caption: "Connect with Fiverr's team and community",
+          },
+          {
+            key: 3,
+            image: '',
+            label: 'Guides',
+            caption: 'In-depth guides covering business topics',
+          },
+          {
+            key: 4,
+            image: '',
+            label: 'Podcast',
+            caption: 'Inside tips from top business minds',
+          },
+          {
+            key: 5,
+            image: '',
+            label: 'Learn',
+            caption: 'Professional online courses, led by experts',
+          },
+          {
+            key: 6,
+            image: '',
+            label: 'Blog',
+            caption: 'News, information and community stories',
+          },
+          {
+            key: 7,
+            image: '',
+            label: 'Logo Maker',
+            caption: 'Create your logo instantly',
+          }
+        ],
+      },
+      {
+        key: 3,
+        label: 'English',
+        href: '/',
+        icon: 'GlobalLine',
+      },
+      {
+        key: 4,
+        label: 'Become a Seller',
+        href: '/',
+        icon: '',
+      }
+    ],
+  },
+  categoriesMenu: [
+    { key: 1, label: 'Graphics & Design', href: '' },
+    { key: 2, label: 'Programming & Tech', href: '' },
+    { key: 3, label: 'Digital Marketing', href: '' },
+    { key: 4, label: 'Video & Animation', href: '' },
+    { key: 5, label: 'Writing & Translation', href: '' },
+    { key: 6, label: 'Music & Audio', href: '' },
+    { key: 7, label: 'Business', href: '' },
+    { key: 8, label: 'Consulting', href: '' },
+    { key: 9, label: 'AI Services', href: '' },
+    { key: 10, label: 'Personal Growth', href: '' }
+  ],
+  sideNav: [
+    { key: 1, label: 'Sign in', href: '' },
+    {
+      key: 2,
+      label: 'Browse categories',
+      href: '',
+      children: [
+        { key: 1, label: 'Graphics & Design' },
+        { key: 2, label: 'Programming & Tech' },
+        { key: 3, label: 'Digital Marketing' },
+        { key: 4, label: 'Video & Animation' },
+        { key: 5, label: 'Writing & Translation' },
+        { key: 6, label: 'Music & Audio' },
+        { key: 7, label: 'Business' },
+        { key: 8, label: 'Consulting' },
+        { key: 9, label: 'AI Services' },
+        { key: 10, label: 'Personal Growth' }
+      ],
+    },
+    {
+      key: 3,
+      label: 'Explore',
+      href: '',
+      children: [
+        { key: 1, label: 'Discover' },
+        { key: 2, label: 'Guides' },
+        { key: 3, label: 'Learn' },
+        { key: 4, label: 'Logo Maker' },
+        { key: 5, label: 'Community' },
+        { key: 6, label: 'Podcast' },
+        { key: 7, label: 'Blog' }
+      ],
+    },
+    {
+      key: 4,
+      label: 'Fiverr Pro',
+      children: [
+        { key: 1, label: "I'm looking to hire" },
+        { key: 2, label: 'I want to offer Pro services' }
+      ],
+    }
+  ],
+};
+
+/**
+ * Static content of Footer
+ */
 export const FooterContent = {
   categories: [
     {
@@ -107,8 +261,8 @@ export const FooterContent = {
 };
 
 /**
-* Static content of Not Found Page
-*/
+ * Static content of Not Found Page
+ */
 export const NotFoundContent = {
   brand: {
     image: '/assets/icons/fiverr-white.svg',

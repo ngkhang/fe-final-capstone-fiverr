@@ -1,0 +1,6 @@
+.dialog-custom {
+  @apply overflow-y-auto h-full;
+  .btn-dialog-close {
+    @apply hidden;
+  }
+}
