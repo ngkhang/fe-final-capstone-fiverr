@@ -105,6 +105,9 @@ const config = {
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
+      backgroundImage: {
+        'hero-pattern': 'linear-gradient(180deg,#003912 36.72%,#19aa64 141.43%)',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

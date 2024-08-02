@@ -1,3 +1,98 @@
+
+/**
+ * Static content of Home page
+ */
+export const HomePageContent = {
+  hero: {
+    title: 'Find the right freelance service, right away',
+    image: '/assets/images/hero-home.png',
+    trusted: [
+      { key: 1, alt: 'meta', image: '/assets/icons/meta.svg' },
+      { key: 2, alt: 'google', image: '/assets/icons/google.svg' },
+      { key: 3, alt: 'netflix', image: '/assets/icons/netflix.svg' },
+      { key: 4, alt: 'pg', image: '/assets/icons/pg.svg' },
+      { key: 5, alt: 'paypal', image: '/assets/icons/paypal.svg' },
+      { key: 6, alt: 'payoneer', image: '/assets/icons/payoneer.svg' }
+    ],
+  },
+  subCategories: [
+    {
+      key: 1,
+      label: 'Programming & Tech',
+      image : '/assets/newCategories/programming-tech.svg',
+    },
+    {
+      key: 2,
+      label: 'Graphics & Design',
+      image : '/assets/newCategories/graphics-design.svg',
+    },
+    {
+      key: 3,
+      label: 'Digital Marketing',
+      image : '/assets/newCategories/digital-marketing.svg',
+    },
+    {
+      key: 4,
+      label: 'Writing & Translation',
+      image : '/assets/newCategories/writing-translation.svg',
+    },
+    {
+      key: 5,
+      label: 'Video & Animation',
+      image : '/assets/newCategories/video-animation.svg',
+    },
+    {
+      key: 6,
+      label: 'AI Services',
+      image : '/assets/newCategories/ai-services.svg',
+    },
+    {
+      key: 7,
+      label: 'Music & Audio',
+      image : '/assets/newCategories/music-audio.svg',
+    },
+    {
+      key: 8,
+      label: 'Business',
+      image : '/assets/newCategories/business.svg',
+    },
+    {
+      key: 9,
+      label: 'Consulting',
+      image : '/assets/newCategories/consulting.svg',
+    }
+  ],
+  fingertips: {
+    title: 'A whole world of freelance talent at your fingertips',
+    children: [
+      {
+        key: 1,
+        label: 'Over 700 categories',
+        description: 'Get results from skilled freelancers from all over the world, for every task, at any price point.',
+        image: '/assets/images/fingertip (1).svg',
+      },
+      {
+        key: 2,
+        label: 'Clear, transparent pricing',
+        description: 'Pay per project or by the hour (Pro). Payments only get released when you approve.',
+        image: '/assets/images/fingertip (2).svg',
+      },
+      {
+        key: 3,
+        label: 'Quality work done faster',
+        description: 'Filter to find the right freelancers quickly and get great work delivered in no time, every time.',
+        image: '/assets/images/fingertip (3).svg',
+      },
+      {
+        key: 4,
+        label: '24/7 award-winning support',
+        description: 'Chat with our team to get your questions answered or resolve any issues with your orders.',
+        image: '/assets/images/fingertip (4).svg',
+      }
+    ],
+  },
+};
+
 /**
  * Static content of Header
  */
