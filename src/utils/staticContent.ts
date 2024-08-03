@@ -1,3 +1,26 @@
+/**
+ * Static content of Auth page
+ */
+export const AuthPageContent = {
+  signin: {
+    title: 'Sign in to your account',
+    description: '',
+    switchAuth: {
+      href: '/auth/signup',
+      label: 'Sign Up',
+    },
+    footer: 'By joining, you agree to the Fiverr Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.',
+  },
+  signup: {
+    title: 'Create a new account',
+    description: 'Enter your email below to create your account',
+    switchAuth: {
+      href: '/auth/signin',
+      label: 'Sign In',
+    },
+    footer: 'By joining, you agree to the Fiverr Terms of Service and to occasionally receive emails from us. Please read our Privacy Policy to learn how we use your personal data.',
+  },
+};
 
 /**
  * Static content of Home page

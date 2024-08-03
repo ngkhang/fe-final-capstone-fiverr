@@ -1,0 +1,37 @@
+.auth-page{
+  .form-auth {
+    .title {
+      @apply text-center mb-6;
+      h2 {
+        @apply font-bold text-xl laptop:text-2xl mb-2
+      }
+    }
+
+    .main {
+      form {
+        > div {
+          @apply mb-4;
+          
+          label {
+            @apply text-black;
+            :last-child {
+              @apply text-red-7 font-semibold text-base ml-1
+            }
+          }
+        }
+
+        .btn-submit {
+          @apply mt-4 w-full py-5 font-semibold bg-green-9 hover:bg-green-8 text-white hover:text-white;
+        }
+
+        &.form-signup {
+          @apply tablet:flex flex-wrap laptop:block;
+          
+          > div {
+            @apply tablet:w-1/2 tablet:px-2 laptop:w-full laptop:px-0;
+          }
+        }
+      }
+    }
+  }
+}
