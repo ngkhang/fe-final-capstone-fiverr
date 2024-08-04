@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import axios, { AxiosError, AxiosInstance, AxiosResponse, AxiosRequestConfig, AxiosRequestHeaders } from 'axios';
 import { redirect } from 'next/navigation';
-import { DOMAIN, TOKEN_CYBERSOFT, tokenCybesoftKey } from '@/utils/constants';
+import { DOMAIN, TOKEN_CYBERSOFT, tokenCybersoftKey } from '@/utils/constants';
 
 // Define types
 interface AdaptAxiosRequestConfig extends AxiosRequestConfig {
@@ -26,29 +26,29 @@ const STATUS_CODE: StatusCode= {
   */
   401: {
     message: 'Unauthorized access - perhaps the user is not logged in or token expired.',
-    path: '/login'
+    path: '/auth/signin',
   },
   /**
   * Xử lý lỗi 403 Forbidden
   */
   403: {
     message: "Forbidden - you don't have permission to access this resource.",
-    path: '/login'
+    path: '/auth/signin',
   },
   /**
   * Xử lý lỗi 404 Not Found
   */
   404: {
     message: 'Resource not found.',
-    path: '/not-found'
+    path: '/not-found',
   },
   /**
   * Xử lý lỗi 500 Internal Server Error
   */
   500: {
     message: 'Internal server error.',
-    path: '/not-found'
-  }
+    path: '/not-found',
+  },
 };
 
 /**
@@ -60,8 +60,8 @@ const axiosInstance: AxiosInstance = axios.create({
   baseURL: DOMAIN,
   timeout: 5000,
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
 /**
@@ -69,12 +69,13 @@ const axiosInstance: AxiosInstance = axios.create({
 *
 * @link https://axios-http.com/docs/interceptors
 */
+
 axiosInstance.interceptors.request.use(
   (config: AdaptAxiosRequestConfig) => {
   // TODO: Config accessToken
   // const accessToken = localStorage.getItem('key');
     if (config.headers) {
-      config.headers.set(tokenCybesoftKey, TOKEN_CYBERSOFT);
+      config.headers.set(tokenCybersoftKey, TOKEN_CYBERSOFT);
       // config.headers['Authorization'] = accessToken ? `${accessToken}` : '';
     }
     // if (isClient()) {
@@ -116,13 +117,16 @@ axiosInstance.interceptors.response.use(
       console.error(messageError);
 
       if (CodeError) redirect(CodeError.path);
-      return;
+      return Promise.reject(err);
+
     }
-    request
-      // Request đã được gửi nhưng không nhận được phản hồi từ server
-      ? console.error('No response received from server')
-      // Một số lỗi khác xảy ra trong quá trình thiết lập request
-      : console.error(`Error setting up request: ${message}`);
+    else {
+      request
+        // Request đã được gửi nhưng không nhận được phản hồi từ server
+        ? console.error('No response received from server')
+        // Một số lỗi khác xảy ra trong quá trình thiết lập request
+        : console.error(`Error setting up request: ${message}`);
+    }
 
     return Promise.reject(err);
   }

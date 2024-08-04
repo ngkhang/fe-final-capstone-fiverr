@@ -2,6 +2,8 @@
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
+import { signInApi } from '@/server/actions/auth.action';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -39,6 +41,7 @@ const fields: Field[] = [
 ];
 
 const SignIn = () => {
+  const router = useRouter();
   // 1. Define your form.
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -49,10 +52,18 @@ const SignIn = () => {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof FormSchema>) {
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+    const { statusCode, message } = await signInApi(values);
+
+    // TODO: Add Toast
+    if (statusCode === 200) {
+      console.log(message);
+      router.push('/');
+    }
+    else {
+      console.log(message);
+    }
+  };
 
   return (
     <Form {...form}>

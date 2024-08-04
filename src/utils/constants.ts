@@ -1,8 +1,8 @@
 // Define the key constants
 export const accessTokenKey = 'accessToken';
-export const tokenCybesoftKey = 'tokenCybesoft';
+export const tokenCybersoftKey = 'tokenCybersoft';
 
-export const DOMAIN = 'https://apistore.cybersoft.edu.vn';
+export const DOMAIN = 'https://fiverrnew.cybersoft.edu.vn';
 export const TOKEN_CYBERSOFT = process.env.NEXT_PUBLIC_TOKEN_CYBERSOFT;
 
 // Define the base endpoints
@@ -21,7 +21,7 @@ const JOB_HIRE_BASE = '/api/thue-cong-viec';
  */
 export const AuthApi = {
   SIGNUP: `${AUTH_BASE}/signup`,
-  SIGNIN: `${AUTH_BASE}/signin`
+  SIGNIN: `${AUTH_BASE}/signin`,
 };
 
 /**
@@ -32,7 +32,7 @@ export const CommentsApi = {
   CREATE: COMMENTS_BASE,
   UPDATE: (id: string) => `${COMMENTS_BASE}/${id}`,
   DELETE: (id: string) => `${COMMENTS_BASE}/${id}`,
-  GET_BY_JOB: (jobId: string) => `${COMMENTS_BASE}/lay-binh-luan-theo-cong-viec/${jobId}`
+  GET_BY_JOB: (jobId: string) => `${COMMENTS_BASE}/lay-binh-luan-theo-cong-viec/${jobId}`,
 };
 
 /**
@@ -47,7 +47,7 @@ export const JobCategoryDetailsApi = {
   DELETE: (id: string) => `${JOB_CATEGORY_DETAILS_BASE}/${id}`,
   ADD_GROUP: `${JOB_CATEGORY_DETAILS_BASE}/them-nhom-chi-tiet-loai`,
   UPLOAD_GROUP_IMAGE: (groupId: string) => `${JOB_CATEGORY_DETAILS_BASE}/upload-hinh-nhom-loai-cong-viec/${groupId}`,
-  UPDATE_GROUP: (id: string) => `${JOB_CATEGORY_DETAILS_BASE}/sua-nhom-chi-tiet-loai/${id}`
+  UPDATE_GROUP: (id: string) => `${JOB_CATEGORY_DETAILS_BASE}/sua-nhom-chi-tiet-loai/${id}`,
 };
 
 
@@ -66,7 +66,7 @@ export const JobsApi = {
   GET_JOB_CATEGORY_DETAILS: (categoryId: string) => `${JOBS_BASE}/lay-chi-tiet-loai-cong-viec/${categoryId}`,
   GET_JOB_BY_CATEGORY_DETAIL: (categoryDetailId: string) => `${JOBS_BASE}/lay-cong-viec-theo-chi-tiet-loai/${categoryDetailId}`,
   GET_JOB_DETAIL: (jobId: string) => `${JOBS_BASE}/lay-cong-viec-chi-tiet/${jobId}`,
-  GET_BY_NAME: (jobName: string) => `${JOBS_BASE}/lay-danh-sach-cong-viec-theo-ten/${jobName}`
+  GET_BY_NAME: (jobName: string) => `${JOBS_BASE}/lay-danh-sach-cong-viec-theo-ten/${jobName}`,
 };
 
 /**
@@ -78,7 +78,7 @@ export const JobCategoriesApi = {
   GET_PAGINATED_SEARCH: (pageIndex?:number, pageSize?:number) => `${JOB_CATEGORIES_BASE}/phan-trang-tim-kiem?pageIndex=${pageIndex}&pageSize=${pageSize}`,
   GET_BY_ID: (id: string) => `${JOB_CATEGORIES_BASE}/${id}`,
   UPDATE: (id: string) => `${JOB_CATEGORIES_BASE}/${id}`,
-  DELETE: (id: string) => `${JOB_CATEGORIES_BASE}/${id}`
+  DELETE: (id: string) => `${JOB_CATEGORIES_BASE}/${id}`,
 };
 
 /**
@@ -92,7 +92,7 @@ export const UsersApi = {
   GET_BY_ID: (id: string) => `${USERS_BASE}/${id}`,
   UPDATE: (id: string) => `${USERS_BASE}/${id}`,
   GET_BY_NAME: (username: string) => `${USERS_BASE}/search/${username}`,
-  UPLOAD_AVATAR: `${USERS_BASE}/upload-avatar`
+  UPLOAD_AVATAR: `${USERS_BASE}/upload-avatar`,
 };
 
 
@@ -100,7 +100,7 @@ export const UsersApi = {
 * Skills API endpoints
 */
 export const SkillsApi = {
-  GET_ALL: SKILLS_BASE
+  GET_ALL: SKILLS_BASE,
 };
 
 /**
@@ -114,5 +114,5 @@ export const JobHireApi = {
   UPDATE: (id: string) => `${JOB_HIRE_BASE}/${id}`,
   DELETE: (id: string) => `${JOB_HIRE_BASE}/${id}`,
   GET_HIRED_LIST: `${JOB_HIRE_BASE}/lay-danh-sach-da-thue`,
-  COMPLETE_JOB: (jobHireId: string) => `${JOB_HIRE_BASE}/hoan-thanh-cong-viec/${jobHireId}`
+  COMPLETE_JOB: (jobHireId: string) => `${JOB_HIRE_BASE}/hoan-thanh-cong-viec/${jobHireId}`,
 };

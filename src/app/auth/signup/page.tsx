@@ -2,6 +2,8 @@
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/navigation';
+import { signUpApi } from '@/server/actions/auth.action';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -55,32 +57,46 @@ const FormSchema = z.object({
       message: 'Phone number must be at least 10 characters.',
     })
     .regex(/^\d+$/, 'Phone number is invalid')
-    .min(12, {
+    .max(12, {
       message: 'Please enter a maximum of 12 characters.',
     })
     .optional(),
   birthday: z.date({
     required_error: 'A date of birth is required.',
   }),
-  gender: z.string().optional(),
+  gender: z.string(),
 });
 
 const SignUp = () => {
+  const router = useRouter();
   // 1. Define your form.
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       email: '',
       password: '',
-      gender: '',
+      phone: '',
     },
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof FormSchema>) {
-    // ✅ This will be type-safe and validated.
-    console.log(values);
-  }
+  const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+    const payload = {
+      ...values,
+      birthday: values.birthday.toString(),
+      gender: values.gender === 'male' ? true : false,
+      role: '',
+      skill: [],
+      certification: [],
+    };
+    const { statusCode, message } = await signUpApi(payload);
+
+    if (statusCode === 200) {
+      console.log(message);
+      // TODO: Add Toast - Auto Login
+      router.push('/auth/signin');
+    } else console.log(message);
+  };
 
   return (
     <Form {...form}>
@@ -200,9 +216,8 @@ const SignUp = () => {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="male">Male</SelectItem>
-                  <SelectItem value="female">Female</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
+                  <SelectItem value='male'>Male</SelectItem>
+                  <SelectItem value='female'>Female</SelectItem>
                 </SelectContent>
               </Select>
             </FormItem>
